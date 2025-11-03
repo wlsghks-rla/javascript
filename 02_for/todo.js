@@ -58,11 +58,13 @@ addNumber(1,10);
 *
 
 출력시키기*/
-for(let s = 5; s > 0; s--) {
-  for(let j = 0; j < s; j++){
-    document.writeln('*');  
+let star = '';
+for(let s = 5; s >= 1; s--) {
+  star = '';
+  for(let j = 1; j <= s; j++){
+    star += '*';
   }
-  document.writeln("<br>");
+  console.log(star);
 }
 
 
