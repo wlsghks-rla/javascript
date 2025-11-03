@@ -31,7 +31,6 @@ summary(10);
 
 // 3. 함수(addNumber) 매개값 x, y => 4, 10 사이의 정수의 합을 출력.
 
-let total = 0;
 function addNumber(x, y) {
   if(x == undefined || x == null) {
     console.log('x값 지정');
@@ -41,10 +40,11 @@ function addNumber(x, y) {
     console.log('y값 지정');
     return;
   };
+  let total = 0;
   for(let z = x; z <= y; z++){
     total += z;
   }
-  console.log(x + '와 ' + y + '사이의 합 ' + result);
+  console.log(x + '와 ' + y + '사이의 합 ' + total);
 }
 addNumber(1,10);
 
@@ -58,11 +58,11 @@ addNumber(1,10);
 *
 
 출력시키기*/
-let l = \n;
 for(let s = 5; s > 0; s--) {
-  for(let m = s; m <= 5; m++){
-    console.log('*');
+  for(let j = 0; j < s; j++){
+    document.writeln('*');  
   }
-  console.log(l);
+  document.writeln("<br>");
 }
+
 
