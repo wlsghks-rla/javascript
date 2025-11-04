@@ -2,17 +2,17 @@
 
 // 1. 함수(guguDan) 매개값으로 5 => 5단 출력, 6 => 6단 출력
 
-function guguDan(num) {
+function guguDan(num) {//function guguDan(dan); -> dan은 매개변수(값은 모르고, 함수 안에서 사용될 변수)
   if(num == undefined || num == null) {
-    console.log('num값 지정');
+    console.log('num값 지정'); // console.log('${dan}단`);
     return;
   }
   for(let i = 1; i <= 9; i++) {
-    console.log(num + '*' + i + '=' + num * i);
+    console.log(num + '*' + i + '=' + num * i); //console.log(`${dan} * ${i} = ${dan * i}`);
   }
 }
 
-guguDan(5);
+guguDan(5); // 함수호출.
 
 // 2. 함수(summary) 매개값으로 7 => 1부터 7까지의 합 콘솔 출력.
 
@@ -59,12 +59,15 @@ addNumber(1,10);
 
 출력시키기*/
 let star = '';
-for(let s = 5; s >= 1; s--) {
+function startriangle(n)=
+for(let s = n; s >= 1; s--) {
   star = '';
   for(let j = 1; j <= s; j++){
     star += '*';
   }
   console.log(star);
 }
+/*
+
 
 
