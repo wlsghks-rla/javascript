@@ -43,7 +43,7 @@ showHeader(); // Header부분 생성
 function showCalendar(year, month) {
   console.log(year, month);
   // 기존 값 삭제.
-  document.querySelector("table>tbody").innerHTML = " ";
+  document.querySelector("table>tbody").innerHTML = " "; // 삭제 안하면 년월바뀔 때마다 중첩됨.
   const now = new Date();
   now.setFullYear(year); // 년도 변환
   now.setMonth(month - 1); // 월 변환
