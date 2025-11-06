@@ -36,8 +36,6 @@ const students = [
 students.forEach((elem) => {
   const data = [elem.sno, elem.sname, elem.score];
   let tr = makeRow(data);
-  // tbody에 자식요소로 appendChild.
-    // document.querySelector("#studentList").appendChild(tr);
 });
 
 document

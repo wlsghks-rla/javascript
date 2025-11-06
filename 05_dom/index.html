@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    #container {
+      margin: 0 auto;
+    }
+    .search {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    table {
+      text-align: center;
+      border: 1px solid #000;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+    }
+    thead {
+      background-color: rgba(154, 177, 200, 0.5);
+    }
+    tbody:nth-child(2n) {
+      background-color: #ddd;
+    }
+    /* 페이지네이션 컨테이너 */
+    .pagination {
+      display: inline-block;
+      margin: 20px 0;
+    }
+
+    /* 각 페이지 링크 */
+    .pagination a {
+      color: #333;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+      border-radius: 4px;
+    }
+
+    /* hover 시 */
+    .pagination a:hover:not(.active):not(.disabled) {
+      background-color: #f1f1f1;
+    }
+
+    /* 활성화된 페이지 */
+    .pagination a.active {
+      background-color: #4caf50;
+      color: white;
+      border: 1px solid #4caf50;
+    }
+
+    /* 비활성화된 버튼 */
+    .pagination a.disabled {
+      color: #ccc;
+      border: 1px solid #eee;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    /* clearfix */
+    .pagination::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h3>DOM 연습</h3>
+      <div class="search">
+        상품명:
+        <input id="input" type="text" placeholder="상품명을 입력하세요." />
+        <!--  -->
+        카테고리:
+        <select class="categories">
+          <option value="All">전체</option>
+        </select>
+        <button>조회</button>
+      </div>
+      <div class="products">
+        <table>
+          <thead>
+            <tr>
+              <th>상품코드(pcode)</th>
+              <th>상품명(pname)</th>
+              <th>상품가격(purchasing)</th>
+              <th>카테고리(category)</th>
+            </tr>
+          </thead>
+          <tbody id="list"></tbody>
+        </table>
+      </div>
+      <!-- padding처리 -->
+      <div class="pagination">
+        <!-- 왼족으로 꺽쇠 2개 -->
+        <!-- <a href="#" class="disabled">&laquo</a>
+        <a href="#">1</a>
+        <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo</a> -->
+        <!-- 오른쪽으로 꺽쇠 2개 -->
+      </div>
+      <!-- 외부 스크립트 -->
+      <script src="js/data.js"></script>
+      <script src="js/productPage.js"></script>
+    </div>
+  </body>
+</html>
