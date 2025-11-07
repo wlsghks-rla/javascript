@@ -11,6 +11,15 @@ const products = [
     rating: 4.6,
   },
   {
+    productCode: "E001",
+    productName: "27인치 모니터",
+    category: "전자기기",
+    stockQty: 25,
+    supplier: "뷰텍코리아",
+    purchasePrice: 190000,
+    rating: 4.6,
+  },
+  {
     productCode: "E002",
     productName: "스마트 TV 43인치",
     category: "전자기기",

@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello, World",
+      "author": "Hong"
+    },
+    {
+      "id": "2",
+      "title": "Good, Morning",
+      "author": "Park"
+    },
+    {
+      "id": "2257",
+      "title": "sample data",
+      "author": "user01"
+    },
+    {
+      "id": "f21c",
+      "title": "sample data",
+      "author": "user01"
+    },
+    {
+      "id": "ad2c",
+      "title": "sample data",
+      "author": "user01"
+    },
+    {
+      "id": "4995",
+      "title": "sample data",
+      "author": "user01"
+    },
+    {
+      "id": "9724",
+      "title": "sample data",
+      "author": "user01"
+    }
+  ]
+}
