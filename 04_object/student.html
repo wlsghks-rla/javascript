@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="student.js"></script>
   </head>
   <style>
     body {
@@ -14,7 +13,7 @@
       padding: 20px;
     }
     .container {
-      max-width: 600px;
+      max-width: 1000px;
       margin: 40px auto;
       background: white;
       border-radius: 8px;
@@ -30,14 +29,15 @@
       border-collapse: collapse;
       margin-top: 20px;
     }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
+    tbody{
+      text-align: center;
     }
     th {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
       background-color: #f1f1f1;
-      width: 30%;
+      
     }
     .btn-back {
       display: inline-block;
@@ -52,35 +52,26 @@
     .btn-back:hover {
       background-color: #45a049;
     }
-  </style>
+    </style>
 </head>
   <body>
       <div class="container">
         <h2>학생 상세정보</h2>
         <table>
-          <tr>
-            <th>학번</th>
-            <td>20250001</td>
-          </tr>
-          <tr>
-            <th>이름</th>
-            <td>홍길동</td>
-          </tr>
-          <tr>
-            <th>점수</th>
-            <td>95</td>
-          </tr>
-          <tr>
-            <th>연락처</th>
-            <td>010-1234-5678</td>
-          </tr>
-          <tr>
-            <th>이메일</th>
-            <td>hong@naver.com</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>학번</th>
+              <th>이름</th>
+              <th>점수</th>
+              <th>연락처</th>
+              <th>이메일</th>
+            </tr>
+          </thead>
+          <tbody id="data"></tbody>
         </table>
        <!-- 학번,이름,점수,연락처,이메일 -->
       <a href="form.html" class="btn-back">목록으로</a>
     </div>
   </body>
+  <script src="학생정보.js"></script>
 </html>

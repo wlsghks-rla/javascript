@@ -34,7 +34,7 @@ const students = [
 
 document
   .querySelector('form[name="loginForm"]')
-  .addEventListener("submit", (e) => {
+  .addEventListener("submit", e => {
     e.preventDefault();
 
     let id = document.querySelector('input[name="userId"]').value;

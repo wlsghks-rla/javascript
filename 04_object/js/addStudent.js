@@ -2,8 +2,9 @@
 console.log(JSON.parse(localStorage.getItem("students")));
 let students = JSON.parse(localStorage.getItem("students"));
 // 페이지 로딩되는 시점에 처리.
-students.forEach((elem) => {
-  const data = [elem.sno, elem.sname, elem.score];
+students.forEach(elem => {
+  const data = [elem.sno, elem.sname, elem.score, elem.phone, elem.email];
+  console.log(data);
   let tr = makeRow(data);
   console.log(tr);
   document.querySelector("#studentList").appendChild(tr);
@@ -11,21 +12,29 @@ students.forEach((elem) => {
 
 document
   .querySelector("#addForm") //
-  .addEventListener("submit", (e) => {
+  .addEventListener("submit", e => {
     // form의 submit 제어.
     e.preventDefault(); // 기본기능  차단.
     // 입력값들.
     const sno = document.querySelector("#studNo").value; //입력값.
     const sname = document.querySelector("#studName").value; //입력값.
     const score = document.querySelector("#score").value; //입력값.
+    const phone = document.querySelector("#phone").value; //입력값.
+    const email = document.querySelector("#email").value; //입력값.
     if (!sno || !sname || !score) {
       alert("필수값 입력.");
       return;
     }
     // 입력값을 배열.
-    const inputs = [sno, sname, score]; // 입력값 배열로 등록.
+    const inputs = [sno, sname, score, phone, email]; // 입력값 배열로 등록.
     // LOCALsTORAGE에 값을 저장
-    students.push({ sno: sno, sname: sname, score: score });
+    students.push({
+      sno: sno,
+      sname: sname,
+      score: score,
+      phone: phone,
+      email: email,
+    });
     localStorage.setItem("students", JSON.stringify(students));
     // 화면에 출력
     let tr = makeRow(inputs); // 함수호출.
@@ -58,9 +67,9 @@ function makeRow(inputs) {
   let btn = document.createElement("button");
   btn.innerText = "삭제";
   // 클릭 이벤트 등록.
-  btn.addEventListener("click", (e) => {
+  btn.addEventListener("click", e => {
     if (confirm("삭제하겠습니까?")) {
-      const idx = students.findIndex((student) => student.sno == inputs[0]);
+      const idx = students.findIndex(student => student.sno == inputs[0]);
       students.slice(idx, 1);
       localStorage.setItem("sutdents", JSON.stringify(students));
 

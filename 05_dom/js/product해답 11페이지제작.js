@@ -12,6 +12,7 @@ for (let product of products) {
 }
 // select 태그에 하위요소로 추가하기.
 const categorySelect = document.querySelector("select.categories");
+console.log(categories);
 for (let category of categories) {
   const option = document.createElement("option"); // option 생성.
   option.value = category; // value 속성.
@@ -26,7 +27,7 @@ tempList = products; // 페이지 로드될 때ㅐ
 
 // 이벤트 등록. 3번
 categorySelect //
-  .addEventListener("change", (e) => {
+  .addEventListener("change", e => {
     //
     const category = e.target.value;
     // console.log(e.target.value);
@@ -46,7 +47,7 @@ categorySelect //
 // 페이지 이벤트. 4번
 document
   .querySelector("div.pagination") //
-  .addEventListener("click", (e) => {
+  .addEventListener("click", e => {
     let pagingProducts = [];
     // 'A'태그일 경우에만 처리.
     if (e.target.nodeName == "A") {

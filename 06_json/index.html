@@ -22,8 +22,8 @@
 
       //get 방식. http://localhost:3000/posts 젠체글 조회. http://localhost:3000/posts/1 상세글 -> header영역으로 제한적 정보
       fetch(url) // 프로미스 객체를 then이라는 메소드에 전달
-        .then((resp) => resp.json()) // body의 값을 읽게하는 함수 stream -> javascript 객체.
-        .then((result) => {
+        .then(resp => resp.json()) // body의 값을 읽게하는 함수 stream -> javascript 객체.
+        .then(result => {
           const totalList = result.data; // [{},{},{},{},{},{},{},] => [[],[],[],[],[],[],[],]
           const data = [];
           for (let center of totalList) {
@@ -49,25 +49,25 @@
         });
       //post 방식. http://localhost:3000/posts 등록. -> body 영역으로 많은 양의 정보 전달 가능
 
-      function postRequest() {
-        // const data = { id: 3, title: "sample data", author: "user01" };
-        const data = { title: "sample data", author: "user01" };
-        // post 요청.
-        fetch("http://localhost:3000/posts", {
-          method: "post", // put방식은 put
-          headers: { "Content-Type": "applicaton/json" },
-          body: JSON.stringify(data),
-        })
-          .then(function (resp) {
-            return resp.json();
-          })
-          .then(function (result) {
-            console.log(result);
-          })
-          .catch(function (err) {
-            console.log(err);
-          });
-      }
+      // function postRequest() {
+      //   // const data = { id: 3, title: "sample data", author: "user01" };
+      //   const data = { title: "sample data", author: "user01" };
+      //   // post 요청.
+      //   fetch("http://localhost:3000/posts", {
+      //     method: "post", // put방식은 put
+      //     headers: { "Content-Type": "applicaton/json" },
+      //     body: JSON.stringify(data),
+      //   })
+      //     .then(function (resp) {
+      //       return resp.json();
+      //     })
+      //     .then(function (result) {
+      //       console.log(result);
+      //     })
+      //     .catch(function (err) {
+      //       console.log(err);
+      //     });
+      // }
 
       // //put방식. 수정
       // function postRequest() {
