@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="book.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="register">
+        <form action="" name="addBook">
+          도서번호: <input type="text" name="bookNo"> 
+          도서명: <input type="text" name="title">
+          저자: <input type="text" name="author">
+          가격: <input type="text" name="price">
+          <button type="submit">저장</button>
+        </form>
+      </div>
+      <!-- 도서번호(001), 도서명(자바스크립트 핵심가이드), 저자(알베르토), 가격(19800원) -->
+      <h3>도서목록</h3>
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th>도서번호</th>
+            <th>도서명</th>
+            <th>저자</th>
+            <th>가격</th>
+          </tr>
+        </thead>
+        <tbody id="list">
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>001</td>
+            <td>모던 자바스크립트 기초</td>
+            <td>김모던</td>
+            <td>20000</td>
+          </tr>
+        </tbody>
+      </table>
+      <script src="book.js"></script>
+  </body>
+  </div>
+</html>

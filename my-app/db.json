@@ -11,29 +11,13 @@
       "author": "Park"
     },
     {
-      "id": "2257",
-      "title": "sample data",
-      "author": "user01"
-    },
-    {
-      "id": "f21c",
-      "title": "sample data",
-      "author": "user01"
-    },
-    {
-      "id": "ad2c",
-      "title": "sample data",
-      "author": "user01"
-    },
-    {
-      "id": "4995",
-      "title": "sample data",
-      "author": "user01"
-    },
-    {
-      "id": "9724",
-      "title": "sample data",
+      "id": "3",
+      "title": "data sample",
       "author": "user01"
     }
+  ],
+  "comments": [
+    { "id": "1", "comment": "sample comment", "postId": "1" },
+    { "id": "2", "comment": "sample comment2", "postId": "2" }
   ]
 }
