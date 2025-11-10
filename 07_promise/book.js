@@ -19,14 +19,12 @@ function showBookList() {
   // 기존목록을 지우고.
   document.querySelector("#list").innerHTML = "";
   // 배열의 값만큼 화면출력.
-  bookList.forEach((elem) => {
+  bookList.forEach(elem => {
     console.log(elem); // 객체{}.
     let { bookNo, title, author, price } = elem; // 객체 디스트럭칭
     let fields = ['<input type="checkbox">', bookNo, title, author, price];
     let tr = document.createElement("tr");
-    tr.innerHTML = `${fields
-      .map((field) => "<td>" + field + "</td>")
-      .join("")}`;
+    tr.innerHTML = `${fields.map(field => "<td>" + field + "</td>").join("")}`;
     document.querySelector("#list").appendChild(tr);
   });
   document
@@ -35,7 +33,7 @@ function showBookList() {
       console.log();
       document
         .querySelectorAll("tbody input")
-        .forEach((elem) => (elem.checked = ture));
+        .forEach(elem => (elem.checked = ture));
     });
 }
 showBookList();
