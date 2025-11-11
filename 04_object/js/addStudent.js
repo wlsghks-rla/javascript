@@ -1,7 +1,7 @@
 //
 let students = JSON.parse(localStorage.getItem("students"));
 // 페이지 로딩되는 시점에 처리.
-students.forEach(elem => {
+students.forEach((elem) => {
   const data = [elem.sno, elem.sname, elem.score, elem.phone, elem.email];
   console.log(data);
   let tr = makeRow(data);
@@ -11,7 +11,7 @@ students.forEach(elem => {
 
 document
   .querySelector("#addForm") //
-  .addEventListener("submit", e => {
+  .addEventListener("submit", (e) => {
     // form의 submit 제어.
     e.preventDefault(); // 기본기능  차단.
     // 입력값들.
@@ -24,8 +24,10 @@ document
       alert("필수값 입력.");
       return;
     }
+    console.log(sno);
     // 입력값을 배열.
     const inputs = [sno, sname, score, phone, email]; // 입력값 배열로 등록.
+    console.log(inputs);
     // LOCALsTORAGE에 값을 저장
     students.push({
       sno: sno,
@@ -52,7 +54,7 @@ function makeRow(inputs) {
   // tr > td * 3 생성.
   let button = document.createElement("button");
   let tr = document.createElement("tr");
-  tr.addEventListener("click", e => {
+  tr.addEventListener("click", (e) => {
     console.log(e.target.value);
     if ((e.target.value = undefined)) {
       localStorage.setItem("sno", inputs[0]);
@@ -72,14 +74,16 @@ function makeRow(inputs) {
   let btn = document.createElement("button");
   btn.innerText = "삭제";
   // 클릭 이벤트 등록.i
-  btn.addEventListener("click", e => {
-    console.log(inputs[0]);
+  btn.addEventListener("click", (e) => {
+    console.log(students);
+    console.log(inputs);
     if (confirm("삭제하겠습니까?")) {
-      const idx = students.findIndex(student => student.sno == inputs[0]);
+      const idx = students.findIndex((student) => student.sno == inputs[0]);
       students.slice(idx, 1);
       localStorage.setItem("sutdents", JSON.stringify(students));
 
       e.target.parentElement.parentElement.remove();
+      console.log(students);
     }
   });
   td.appendChild(btn);

@@ -96,6 +96,10 @@ form[name="addBook"] button:hover {
     font-size: 15px;
   }
 }
+
+button {
+  margin: 10px;
+}
 /* ===== 테이블 공통 스타일 ===== */
 table {
   width: 100%;

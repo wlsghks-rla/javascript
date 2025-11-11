@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="user">
+      Text:
+      <input id="txt" type="text" name="search" placeholder="입력하세요." />
+      <button>지우기</button>
+      <span class="remaing"></span>
+    </div>
+    <div id="container">
+      <span>Lorem</span><span>ipsum</span><span>dolor</span><span>sit</span
+      ><span>amet,</span><span>consectetur</span><span>adipisicing</span
+      ><span>elit.</span><span>Cupiditate</span><span>nobis</span
+      ><span>dolorem</span><span>culpa!</span><span>Velit</span
+      ><span>voluptates</span><span>explicabo</span><span>illo</span
+      ><span>voluptas</span><span>ipsum,</span><span>ipsam</span
+      ><span>asperiores</span><span>minima</span><span>voluptatem</span
+      ><span>inventore</span><span>quae</span><span>laboriosam</span
+      ><span>aliquam!</span><span>Earum</span><span>libero</span
+      ><span>consequatur</span><span>similique.</span>
+    </div>
+    <script>
+      // 화면에 있는 글들을 찾아서 지우기.
+      document
+        .querySelector("button") //
+        .addEventListener("click", (e) => {
+          let comment = document.querySelector("#txt").value;
+          let span = document.querySelectorAll("span");
+          span.forEach((elem) => {
+            if (elem.innerText == comment) {
+              elem.remove();
+              console.log(span.length);
+              comment = "";
+            }
+          });
+        });
+      // 남은 시간 표시하기
+      let remainSec = 60;
+      // 1초마다 반복 처리.
+      let timeLap = setInterval(() => {
+        document.querySelector("span.remaing").textContent = remainSec--;
+        let span = document.querySelectorAll("span");
+        if (remainSec < 0) {
+          clearInterval(timeLap); // setInterval 작업 취소.
+          alert("실패입니다.");
+        }
+        if (span.length == 1) {
+          clearInterval(timeLap); // setInterval 작업 취소.
+          alert("성공입니다.");
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
